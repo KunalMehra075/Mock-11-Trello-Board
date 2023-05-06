@@ -12,10 +12,26 @@ NoticeRouter.get("/", async (req, res) => {
         res.status(400).json({ Error: err })
     }
 });
+// ! GET NOTICE BY ID
+NoticeRouter.get("/:id", async (req, res) => {
+    let id = req.params.id
+    try {
+        const Notice = await NoticeModel.findById({ _id: id });
+        res.status(200).json({ Message: "Get Notice By Id", Notice });
+    } catch (err) {
+        console.log(err);
+        res.status(400).json({ Error: err })
+    }
+});
 // ! POST A NEW NOTICE
 NoticeRouter.post("/create", async (req, res) => {
     const notice = req.body
+    let title = req.body.title
     try {
+        let exists = await NoticeModel.find({ title })
+        if (exists.length > 0) {
+            return res.status(200).json({ Message: "Notice with same title Already Exists", Notice: exists[0] });
+        }
         const instance = new NoticeModel(notice);
         await instance.save()
         res.status(200).json({ Message: "Created a new Notice", instance });
@@ -25,7 +41,7 @@ NoticeRouter.post("/create", async (req, res) => {
     }
 });
 // ! PATCH A NOTICE
-NoticeRouter.patch("/edit/:id", async (req, res) => {
+NoticeRouter.patch("/:id", async (req, res) => {
     const id = req.params.id
     const payload = req.body
     try {
@@ -37,7 +53,7 @@ NoticeRouter.patch("/edit/:id", async (req, res) => {
     }
 });
 // ! DELETE A NOTICE
-NoticeRouter.patch("/delete/:id", async (req, res) => {
+NoticeRouter.delete("/:id", async (req, res) => {
     const id = req.params.id
     try {
         const Deleted = await NoticeModel.findByIdAndDelete({ _id: id });

@@ -9,6 +9,8 @@
 .flex {
   display: flex;
   align-items: center;
+  gap: 3px;
+  margin: 10px 4px;
 }
 img,
 input,
@@ -24,4 +26,114 @@ a {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+/*todo <!----------------------------------------------- < All Pages > -----------------------------------------------> */
+.FullHeight {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f0f0;
+  flex-direction: column;
+}
+button,
+input[type="submit"],
+a {
+  padding: 7px 15px;
+  background-color: #ffd41f;
+  border-radius: 20px;
+  border: none;
+  color: black;
+  font-weight: 600;
+}
+button:hover,
+input[type="submit"]:hover {
+  background-color: orange;
+}
+a {
+  color: white;
+  background-color: rgb(0, 94, 255);
+}
+a:hover {
+  background-color: blue;
+}
+.PageHeads {
+  font-size: 50px;
+}
+
+/*todo <!----------------------------------------------- < Hone Page > -----------------------------------------------> */
+.MainPage {
+  background-repeat: no-repeat !important;
+  background-size: cover !important
+  ;
+  background-position: left !important;
+}
+.IndexCard {
+  border: 1px solid #000;
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+    rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  border-radius: 10px;
+  background-color: white;
+}
+/*todo <!----------------------------------------------- < Create Notice page > -----------------------------------------------> */
+form {
+  width: 30%;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+    rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: white;
+}
+input {
+  padding: 10px 10px;
+  margin: 4px;
+  font-size: 18px;
+  width: 100%;
+}
+/*todo <!----------------------------------------------- < View All Notices > -----------------------------------------------> */
+.NoticeContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+.NoticeCard {
+  padding: 10px;
+  border: 1px solid #454444;
+  min-height: 210px;
+  margin: 10px;
+  border-radius: 7px;
+  text-align: left;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+    rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
+.BigBox {
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+    rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  padding: 20px;
+  display: flex;
+  background-color: white;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-width: 1200px;
+  min-height: 80vh;
+}
+/*todo <!----------------------------------------------- < Editor > -----------------------------------------------> */
+.Editor {
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+    rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  padding: 12px;
+  border-radius: 10px;
+}
+.EditForm {
+  width: 100%;
+}
+.EditPage {
+  background-color: #f0f0f0;
 }
